@@ -5,6 +5,7 @@ require('dotenv').config();
 const io = require('socket.io')(3000);
 
 io.on('connection', socket => {
+  console.log('connected');
   socket.on('test', payload => {
     logger('test', payload)
   })
@@ -12,7 +13,6 @@ io.on('connection', socket => {
 
 function logger(event, payload) {
   let date = new Date().toISOString();
-
   console.log('EVENT', { event, date, payload });
 };
 
