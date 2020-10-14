@@ -49,7 +49,7 @@ Install all dependencies needed for the project.
 
 ## Data Flow
 
-![Data Flow Diagram](/assets/img/Flowchart.png)
+![Whiteboard](https://github.com/ben-hill33/chkn-N-rice-soup/blob/master/assets/Lab%2019%20Whiteboard.jpg)
 
 ---
 
