@@ -9,8 +9,10 @@ const host = process.env.HOST;
 const hubConnection = socket.connect(host);
 
 
+
 hubConnection.on('arrival', payload => {
 
+hubConnection.on('seated', (payload) => {
   setTimeout(() => {
     arrival(payload);
   }, 1000);
