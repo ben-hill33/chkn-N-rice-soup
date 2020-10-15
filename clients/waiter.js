@@ -1,19 +1,19 @@
 'use strict';
 
-// require('dotenv').config();
-// const io = require('socket.io-client');
-// const host = process.env.HOST;
-// const socket = io(host);
+// const io = require("socket.io-client");
+// const socket = io('http://localhost:3000');
+require('dotenv').config();
+const socket = require('socket.io-client');
+const host = process.env.HOST;
+const hubConnection = socket.connect(host);
 
-const socket = require('socket.io-client')('http://localhost:3000');
-// const host = process.env.HOST;
-// const io = socket.connect('http://localhost:3000');
+hubConnection.on('arrival', payload => {
+  setTimeout(() => {
+    arrival(payload);
+  }, 1000);
+})
 
-setInterval(() => {
-  let payload = {
-    message: 'hello world'
-  };
-  socket.emit('test', payload);
-}, 1000);
-
+function arrival(payload){
+  console.log(`Your ${payload.partyName} of ${payload.partySize} has been sat`); 
+}
 
